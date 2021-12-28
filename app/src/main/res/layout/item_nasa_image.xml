@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="nasaImage"
+            type="com.umang.nasaimagelist.models.ImageItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_4"
+        android:elevation="@dimen/dp_2"
+        android:layout_margin="@dimen/dp_2"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{clickListener}">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_width"
+            app:loadImage="@{nasaImage.hdurl}"/>
+    </androidx.cardview.widget.CardView>
+
+</layout>
